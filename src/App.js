@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import {useState} from 'react'
 
 function App() {
+
+  const [userImg, setUserImg] = useState(null)
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>henlo</h1>
+            <img src={userImg} />
+            <h1>Select Image</h1>
+            <input type="file" onChange={(e) => {
+                  if (e.target.files && e.target.files[0]) {
+                    setUserImg(e.target.value)
+            }}} />
     </div>
   );
 }
